@@ -1,12 +1,12 @@
 #!/bin/bash
 
-PORT=1234
+PORT=42069
 FILE="./queue"
 
 echo "Listening on port $PORT"
 
 while true;
 do
-	input=$(nc -l "$PORT")
+	input=$(nc -l -p "$PORT")
 	echo "$input" >> "$FILE"
 done

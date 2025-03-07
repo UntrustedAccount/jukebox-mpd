@@ -1,6 +1,6 @@
 #!/bin/bash
 
+PORT=42069
 HOST=localhost
-PORT=1234
 
-echo "$1" | nc "$HOST" "$PORT"
+echo "$1" | nc -c "$HOST" "$PORT"
