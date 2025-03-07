@@ -16,6 +16,7 @@ function controller {
 		*)
 			yt-dlp -x --audio-format "$FORMAT" -o "${MUSIC_DIR}/%(title)s.%(ext)s" "$1" --restrict-filenames > /dev/null
 			filename=$(yt-dlp --get-filename -o "%(title)s.$FORMAT" "$1" --restrict-filenames)
+			mpc update --wait
 			mpc add "$filename"
 			;;
 	esac
