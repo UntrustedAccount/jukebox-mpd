@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 FILE="./queue"
 MUSIC_DIR="~/Music"
@@ -29,6 +29,7 @@ do
 		sed -i '1d' $FILE
 		controller "$line"
 	fi
+	sleep 1
 done
 
 
